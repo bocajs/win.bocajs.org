@@ -1,28 +1,33 @@
 {
-  "name": "Websocket-node-Example",
+  "name": "noderaffler",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thedamian/websocket-node-example.git"
   },
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.13.3",
-    "ws": "^1.1.1"
+    "socket.io": "^2.2.0"
   },
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
-  "description": "A tiny demo of the simple websocket example using NODE for the backend",
+  "description": "A simple node and websocket raffle system for meetups and conferences",
   "bugs": {
-    "url": "https://github.com/thedamian/websocket-node-example/issues"
+    "url": "https://github.com/thedamian/NodeRaffle/issues"
   },
-  "homepage": "https://github.com/thedamian/websocket-node-example#readme",
-  "main": "index.js",
+  "homepage": "https://github.com/thedamian/NodeRaffle",
+  "main": "server.js",
   "devDependencies": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "node",
+    "websocket",
+    "raffle"
+  ],
+  "author": "Damian Montero - Github.com/TheDamian",
+  "license": "MIT"
 }

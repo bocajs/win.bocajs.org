@@ -1,0 +1,28 @@
+<%- include('part/top'); %>
+<h1 class="center">Your Ticket #:</h1>
+<h1 class="center" id="YourTicketNo"></h1>
+  <script>
+      var YourTicketNoDiv = document.getElementById('YourTicketNo');
+      var YourTicketNo = 0;
+   
+      socket.on('YourTicket', function (NewTicketNo){
+        alert("You have ticket #" + NewTicketNo);
+        YourTicketNo = NewTicketNo;
+        YourTicketNoDiv.innerHTML = NewTicketNo;
+      });
+
+      socket.on('winner',function (ticket)  {
+        if (ticket == YourTicketNo) {
+                console.log("it's my ticket!")
+                YourTicketNoDiv.classList.remove("winner");
+                YourTicketNoDiv.classList.add("winner");
+                // Play Sounds
+                document.getElementById("soundJackpot").play();
+            }
+      }); // on winner
+  
+      // let's join 
+      socket.emit('newPlayer', '')
+    </script>
+    <audio id="soundJackpot" src="/audio/jackpot1.mp3"></audio>
+<%- include('part/bottom'); %>
